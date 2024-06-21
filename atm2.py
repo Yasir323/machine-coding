@@ -1,32 +1,20 @@
 """
-Functional requirements:
+In the previous implementation:
+The ATM class exposes all the methods required user interaction.
+A modular approach has been taken to define different entities.
+Looks SOLID? Not really.
 
-1. Authentication
-2. Withdraw
-3. View Balance
-4. Deposit
-5. View Transactions [Optional]
-6. Transactions limit [Optional]
-7. Amount limit [Optional]
+Let’s say a new requirement for the ATM to allow money transfer comes in.
+The current design will require modification in the ATM class;
+addition or modification of bunch of states and methods handling the
+transition b/w them as well as the existing states. This violates the
+Open-closed principle
 
-Components:
-1. User
-2. ATM
-3. Card
-4. Account
-5. Cash
-6. Card
-7. Transaction
+State-related logic is embedded in the ATM class which violates the
+Single-responsibility principle.
 
-Enums:
-1. State -> Available, Busy
-2. Transaction Type -> Debit, Credit
-3. Operations -> Deposit, Withdraw, Show Balance, Show Transactions
-
-
-User has a card, a card can have one owner -> One-to-one mapping
-Maybe we can combine both in the user component only
-
+Since ATM class functions as a finite-state machine, we can incorporate
+the State design pattern.
 """
 import datetime
 from enum import Enum

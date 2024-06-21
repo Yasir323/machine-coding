@@ -2,11 +2,20 @@
 Problem:
 Design a cricket scorecard that will show the score for a team along with score of each player.
 
-You will be given the number of players in each team, the number of overs and their batting order as input. Then, we can input overs ball by ball with the runs scored on that ball (could be wide, no ball or a wicket as well).
-You are expected to print individual scores, number of balls faced, number of 4s, number of 6s for all the players from the batting side at the end of every over. You also need to print total score, total wickets. Essentially, you need to keep a track of all the players, strike changes (at the end of the over or after taking singles or 3s) and maintain their scores, also keep track of extra bowls that are being bowled (like wides or no balls). You also need to print which team won the match at the end.
-This is the bare minimum solution which is expected for the problem. You can add some more features once you are done with these, like maintaining a bowlers record (total overs bowled, runs conceded, wickets taken, maiden overs, dot balls, economy, etc.). Total team extras, batsman strike rates, etc. can be added too. But these are "good to have" features, please try to complete the bare minimum first.
+You will be given the number of players in each team, the number of overs and their batting order as input. Then, we can
+input overs ball by ball with the runs scored on that ball (could be wide, no ball or a wicket as well).
+You are expected to print individual scores, number of balls faced, number of 4s, number of 6s for all the players from
+the batting side at the end of every over. You also need to print total score, total wickets. Essentially, you need to
+keep a track of all the players, strike changes (at the end of the over or after taking singles or 3s) and maintain their
+scores, also keep track of extra bowls that are being bowled (like wides or no balls). You also need to print which team
+won the match at the end.
+This is the bare minimum solution which is expected for the problem. You can add some more features once you are done
+with these, like maintaining a bowlers record (total overs bowled, runs conceded, wickets taken, maiden overs, dot balls,
+economy, etc.). Total team extras, batsman strike rates, etc. can be added too. But these are "good to have" features,
+please try to complete the bare minimum first.
 
-Make sure your code is readable and maintainable and preferably object oriented. It should be modular and extensible, to add new features if needed.
+Make sure your code is readable and maintainable and preferably object oriented. It should be modular and extensible,
+to add new features if needed.
 
 Sample input and output:
 No. of players for each team: 5
@@ -97,3 +106,26 @@ Overs: 1.4
 
 Result: Team 1 won the match by 4 runs
 """
+
+
+class Ball:
+    pass
+
+
+class Scoreboard:
+    pass
+
+
+class Team:
+    def __init__(self, batting_lineup: list):
+        self.batting_lineup = batting_lineup
+
+
+class Player:
+    pass
+
+
+class Game:
+    def __init__(self, overs: int, num_players: int):
+        self.overs = overs
+        self.num_players = num_players
